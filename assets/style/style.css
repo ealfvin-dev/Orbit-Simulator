@@ -75,11 +75,31 @@ h1 {
 }
 
 #Hours {
-    visibility: hidden;
+    position: absolute;
+    left: 3%;
+    top: 3%;
+    height: 5%;
+    color: white;
+    font-weight: bold;
+    font-size: 14pt;
 }
 
 #Eccentricity {
-    visibility: hidden;
+    position: absolute;
+    left: 3%;
+    top: 8%;
+    height: 5%;
+    color: white;
+    font-weight: bold;
+    font-size: 14pt;
+}
+
+#HoursMobile {
+    display: none;
+}
+
+#EccentricityMobile {
+    display: none;
 }
 
 @media (orientation: portrait) {
@@ -92,5 +112,17 @@ h1 {
 @media (max-width: 600px) {
     h1 {
         font-size: 42pt;
+    }
+    #HoursMobile {
+        display: block;
+    }
+    #EccentricityMobile {
+        display: block;
+    }
+    #Hours {
+        display: none;
+    }
+    #Eccentricity {
+        display: none;
     }
 }

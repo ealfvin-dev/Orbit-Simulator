@@ -6,8 +6,9 @@ var rb;
 var e;
 
 function orbitSimulation(){
-    document.getElementById("Hours").style.visibility = "visible";
-    document.getElementById("Eccentricity").style.visibility = "visible";
+    document.getElementById("HoursMobile").innerHTML = "Elapsed Time = 0 Hours";
+    document.getElementById("EccentricityMobile").innerHTML = "Orbital Eccentricity = 0.000";
+
     document.getElementById("Hours").innerHTML = "Elapsed Time = 0 Hours";
     document.getElementById("Eccentricity").innerHTML = "Orbital Eccentricity = 0.000";
 
@@ -70,6 +71,7 @@ function orbitSimulation(){
         }
 
         e = (ra - rb) / (ra + rb);
+        document.getElementById("EccentricityMobile").innerHTML = "Orbital Eccentricity = " + e.toFixed(3);
         document.getElementById("Eccentricity").innerHTML = "Orbital Eccentricity = " + e.toFixed(3);
 
         //Find new rhat vector (unit vector that points from Sat to Earth):
@@ -124,6 +126,7 @@ function orbitSimulation(){
         iter++;
 
         if (iter % 360 === 0) {
+            document.getElementById("HoursMobile").innerHTML = "Elapsed Time = " + iter / 360 + " Hours";
             document.getElementById("Hours").innerHTML = "Elapsed Time = " + iter / 360 + " Hours";
         }
 
