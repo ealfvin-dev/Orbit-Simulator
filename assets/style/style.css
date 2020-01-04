@@ -84,10 +84,20 @@ h1 {
     font-size: 14pt;
 }
 
-#Eccentricity {
+#AltMax {
     position: absolute;
     left: 3%;
     top: 8%;
+    height: 5%;
+    color: white;
+    font-weight: bold;
+    font-size: 14pt;
+}
+
+#AltMin {
+    position: absolute;
+    left: 3%;
+    top: 13%;
     height: 5%;
     color: white;
     font-weight: bold;
@@ -98,7 +108,11 @@ h1 {
     display: none;
 }
 
-#EccentricityMobile {
+#AltMaxMobile {
+    display: none;
+}
+
+#AltMinMobile {
     display: none;
 }
 
@@ -116,13 +130,19 @@ h1 {
     #HoursMobile {
         display: block;
     }
-    #EccentricityMobile {
+    #AltMaxMobile {
+        display: block;
+    }
+    #AltMinMobile {
         display: block;
     }
     #Hours {
         display: none;
     }
-    #Eccentricity {
+    #AltMax {
+        display: none;
+    }
+    #AltMin {
         display: none;
     }
 }

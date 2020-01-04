@@ -3,14 +3,15 @@ var runOrbit;
 var thrust = 1;
 var ra;
 var rb;
-var e;
 
 function orbitSimulation(){
     document.getElementById("HoursMobile").innerHTML = "Elapsed Time = 0 Hours";
-    document.getElementById("EccentricityMobile").innerHTML = "Orbital Eccentricity = 0.000";
+    document.getElementById("AltMaxMobile").innerHTML = "Max Altitude = 0 km";
+    document.getElementById("AltMinMobile").innerHTML = "Min Altitude = 0 km";
 
     document.getElementById("Hours").innerHTML = "Elapsed Time = 0 Hours";
-    document.getElementById("Eccentricity").innerHTML = "Orbital Eccentricity = 0.000";
+    document.getElementById("AltMax").innerHTML = "Max Altitude = 0 km";
+    document.getElementById("AltMin").innerHTML = "Min Altitude = 0 km";
 
     const earth = document.getElementById("Earth");
     const sat = document.getElementById("Sat");
@@ -70,9 +71,10 @@ function orbitSimulation(){
             rb = r;
         }
 
-        e = (ra - rb) / (ra + rb);
-        document.getElementById("EccentricityMobile").innerHTML = "Orbital Eccentricity = " + e.toFixed(3);
-        document.getElementById("Eccentricity").innerHTML = "Orbital Eccentricity = " + e.toFixed(3);
+        document.getElementById("AltMaxMobile").innerHTML = "Max Altitude = " + ((ra - 6.378 * Math.pow(10, 6))/1000).toFixed(0) + " km";
+        document.getElementById("AltMinMobile").innerHTML = "Min Altitude = " + ((rb - 6.378 * Math.pow(10, 6))/1000).toFixed(0) + " km";
+        document.getElementById("AltMax").innerHTML = "Max Altitude = " + ((ra - 6.378 * Math.pow(10, 6))/1000).toFixed(0) + " km";
+        document.getElementById("AltMin").innerHTML = "Min Altitude = " + ((rb - 6.378 * Math.pow(10, 6))/10000).toFixed(0) + " km";
 
         //Find new rhat vector (unit vector that points from Sat to Earth):
         if (p1[0] < satPos[0] && xDir != -1){
