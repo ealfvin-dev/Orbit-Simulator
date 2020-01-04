@@ -78,6 +78,10 @@ h1 {
     visibility: hidden;
 }
 
+#Eccentricity {
+    visibility: hidden;
+}
+
 @media (orientation: portrait) {
     #orbitBox {
         height: 79vw;
